@@ -3,13 +3,16 @@ using System.ComponentModel;
 
 namespace Vending_Machine
 {
-    public class Chips : Products
+    public class Chips : Product
     {
-        public const string message = " Hungry eh? Enjoy your salty snacks!";
-
-        public Chips (string productCode, string productName, int price) : base(message, productCode, productName, price)
+        public Chips()
         {
-
+            this.ProductCode = "B1";
+            this.ProductName = "Pringles";
+            this.Price = 23;
+            this.Action = "Once you pop, you can't stop!";
         }
+
     }
+}
 }

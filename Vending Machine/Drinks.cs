@@ -6,13 +6,17 @@ using System.Net.Http;
 
 namespace Vending_Machine
 {
-    public class Drinks : Products
+    public class Drinks : Product
     {
-        public const string message = " Thirty eh? Enjoy your cold drink!";
-
-        public Drinks (string productCode, string productName, int price) : base (message, productCode, productName, price)           
+        public Drinks ()
         {
-
+            this.ProductCode = "C1";
+            this.ProductName = "Coke";
+            this.Price = 15;
+            this.Action = "Feeling thirsty? Enjoy this cold drink!";
         }
+
     }
+
 }
+

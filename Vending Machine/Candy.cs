@@ -2,14 +2,16 @@
 
 namespace Vending_Machine
 {
-    public class Candy : Products
+    public class Candy : Product
 
     {
-        public const string message = " Time for a sugar hit? Enjoy your candy!";
-
-        public Candy (string productCode, string productName, int price) : base(message, productCode, productName, price)
+        public Candy()
         {
-
-        }
+            this.ProductCode = "A1";
+            this.ProductName = "Mars";
+            this.Price = 12;
+            this.Action = " Time for a sugar hit? Enjoy your candy!";
+        }          
+        
     }
 }
