@@ -16,7 +16,7 @@ namespace Vending_Machine
 
         //Add coins inline with denominations accepted
         
-        void DepositCoin(int moneyPoolPot, int coin)
+        public void DepositCoin (int moneyPoolPot, int coin)
         {
             for (var i = 0; i< denonominations.Length; i++)
             {
@@ -26,13 +26,13 @@ namespace Vending_Machine
                 }
                 else
                 {
-                    throw new InvalidOperationException("That coin is not accepted by the machine")
+                    throw new InvalidOperationException("That coin is not accepted by the machine");
                 }
             }
         }
 
         //Reduce money by amount used
-        public bool purchaseItem (string productCode, string enteredCode)
+        public bool PurchaseItem (string productCode, string enteredCode)
         {
             bool success = true;
 

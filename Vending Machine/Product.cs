@@ -19,26 +19,6 @@ namespace Vending_Machine
         public int Price { get; set; }        
         public string Action { get; set; }            
        
-        public Product() //constructor
-        {
-
-        }
-
-        public Product(string productCode, string productName, int price) //constructor
-        {           
-            this.productCode = productCode;
-            this.productName = productName;
-            this.price = price;
-        }
-
-        public Product (string productType, string productCode, string productName, int price) //constructor
-        {
-            this.productType = productType; 
-            this.productCode = productCode; 
-            this.productName = productName;
-            this.price = price;            
-        }
-
 
         public bool PurchaseComplete (int price, int moneyPoolPot)       
         {               
@@ -46,14 +26,14 @@ namespace Vending_Machine
 
             if (moneyPoolPot >= price)
             {
-                -- moneyPoolPot
+                --moneyPoolPot;
             }
             return purchaseComplete;
         }
 
         public string ExamineProduct()
         {
-            return $"Product Information: Product Type: {this.ProductType} \nProductName: {this.ProductName} \nPrice: {this.Price} \n\n");
+            return $"Product Information: Product Type: {this.ProductType} \nProductName: {this.ProductName} \nPrice: {this.Price} \n\n" ;
         }
 
         public string Use ()
