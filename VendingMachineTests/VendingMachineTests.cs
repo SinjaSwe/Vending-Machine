@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using Vending_Machine; 
+using Vending_Machine;
 
 
 namespace VendingMachineTests
@@ -23,31 +23,42 @@ namespace VendingMachineTests
         {
             //Arrange
             MoneyPool mP = new MoneyPool(); //instance of the class
-            int moneyPoolPot = 100;
-            int coin = 20;
-            int expected = 120; 
+            mP.DepositCoin(0);
+            int expected = 50;
 
             //Act
-            var result = mP.DepositCoin(moneyPoolPot, coin); 
-
+            mP.DepositCoin(50); //Add 50 to pot
             //Assert
 
-            Assert.Equal(result, expected); 
+            Assert.Equal(expected, mP.MoneyPoolPot);
+        }
 
-         }
+        [Fact]
+        public void DepositWrongCoinTest()
+        {
+            //Arrange
+            MoneyPool mP = new MoneyPool(); //instance of the class
+            mP.DepositCoin(0);
+
+            //Act
+            mP.DepositCoin(55); //Add 55 to pot
+            //Assert
+
+            Assert.Throws<InvalidOperationException>(() => mP.DepositCoin(0));
+        }
 
         [Fact]
         public void PurchaseItemTest()
         {
             //Arrange
             MoneyPool mP = new MoneyPool(); //instance of the class
-            string productCode = "A1"; 
+            string productCode = "A1";
             string enteredCode = "A1";
-            bool expected = true; 
+            bool expected = true;
 
             //Act
 
-            var result =  mP.PurchaseItem(productCode, enteredCode);
+            var result = mP.PurchaseItem(productCode, enteredCode);
 
             //Assert
 
@@ -63,10 +74,12 @@ namespace VendingMachineTests
             int moneyPoolPot = 121;
 
             //Act
-            mP.ReturnChange(denominations, moneyPoolPot);
+        
+
+
 
             //Assert
-            Assert.Contains
-
+            
         }
     }
+}

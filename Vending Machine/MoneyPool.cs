@@ -10,13 +10,13 @@ namespace Vending_Machine
         int[] denonominations = { 1, 5, 10, 20, 50, 100, 500, 1000 };
                
 
-        private static int moneyPoolPot;
-        public static int MoneyPoolPot { get; set; }
+        int moneyPoolPot = 0;
+        public int MoneyPoolPot { get; set; }
 
 
         //Add coins inline with denominations accepted
         
-        public void DepositCoin (int moneyPoolPot, int coin)
+        public void DepositCoin (int coin)
         {
             for (var i = 0; i< denonominations.Length; i++)
             {

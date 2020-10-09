@@ -29,9 +29,11 @@ namespace ProductTests
             int expected = 77;
 
             //Act
-            var result = pro.PurchaseComplete(price, moneyPoolPot);
+            pro.PurchaseComplete(price, moneyPoolPot);
 
             //Assert
+
+            Assert.
             Assert.Equal(expected, result); 
 
         }

@@ -43,13 +43,7 @@ namespace Vending_Machine
             return $"Product Instructions: {this.Action}"; 
         }
 
-        // Insufficient funds
-        public string NoMoney(int price, int moneyPoolPot)
-        {
-
-        }
-
-
+        
     }
 
 
