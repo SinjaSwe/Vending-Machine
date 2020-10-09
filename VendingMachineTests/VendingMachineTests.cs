@@ -66,7 +66,7 @@ namespace VendingMachineTests
             mP.ReturnChange(denominations, moneyPoolPot);
 
             //Assert
-            Assert.
+            Assert.Contains
 
         }
     }

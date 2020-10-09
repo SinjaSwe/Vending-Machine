@@ -20,15 +20,17 @@ namespace Vending_Machine
         public string Action { get; set; }            
        
 
-        public bool PurchaseComplete (int price, int moneyPoolPot)       
+        public void PurchaseComplete (int price, int moneyPoolPot)       
         {               
-            bool purchaseComplete = false;
-
             if (moneyPoolPot >= price)
             {
                 --moneyPoolPot;
             }
-            return purchaseComplete;
+
+            else
+            { 
+                Console.WriteLine("Insufficient funds. Please feed some more coins into the machine"); 
+            }
         }
 
         public string ExamineProduct()
@@ -41,9 +43,15 @@ namespace Vending_Machine
             return $"Product Instructions: {this.Action}"; 
         }
 
+        // Insufficient funds
+        public string NoMoney(int price, int moneyPoolPot)
+        {
+
+        }
+
 
     }
 
-    
+
 
 }
