@@ -6,29 +6,36 @@ namespace Vending_Machine
 {
     public class MoneyPool : VendingMachine
     {
-
         int[] denonominations = { 1, 5, 10, 20, 50, 100, 500, 1000 };
-               
 
         int moneyPoolPot = 0;
-        public int MoneyPoolPot { get; set; }
+        public int MoneyPoolPot { get; set; }       
 
-
-        //Add coins inline with denominations accepted
         
-        public void DepositCoin (int coin)
+        public bool DepositCoin (int coin)
         {
-            for (var i = 0; i< denonominations.Length; i++)
+            bool coinDeposited = false;
+
+            for (int i = 0; i < denonominations.Length; i++)
             {
                 if (denonominations[i] == coin)
                 {
-                    MoneyPoolPot = MoneyPoolPot + coin;
-                }
-                else
-                {
-                    throw new InvalidOperationException("That coin is not accepted by the machine");
+                    MoneyPoolPot += coin;
+                    coinDeposited = true;
                 }
             }
+            if (!coinDeposited)
+            {
+                Console.WriteLine("That coin is not accepted by this machine");
+            }
+            return coinDeposited;
+            
+        }
+
+
+        public void DepositACoin(int coin)
+        {
+            MoneyPoolPot += coin;
         }
 
         //Reduce money by amount used

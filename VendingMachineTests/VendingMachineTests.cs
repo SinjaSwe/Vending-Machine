@@ -18,33 +18,54 @@ namespace VendingMachineTests
 
         }*/
 
+     
         [Fact]
-        public void DepositCoinTest()
+        public void Test1()
         {
             //Arrange
-            MoneyPool mP = new MoneyPool(); //instance of the class
-            mP.DepositCoin(0);
-            int expected = 50;
+            MoneyPool mP = new MoneyPool();
+            int expected = 5;
 
             //Act
-            mP.DepositCoin(50); //Add 50 to pot
-            //Assert
 
+            mP.DepositACoin(5);
+
+            //Assert
             Assert.Equal(expected, mP.MoneyPoolPot);
+        }
+
+
+        [Fact]
+
+        public void DepositCoinTest()
+        {
+            //Arrange            
+            MoneyPool moneyPool = new MoneyPool(); //instance of the class              
+            int coin = 5;
+
+            //Act
+            bool result = moneyPool.DepositCoin(coin); 
+
+
+            moneyPool.DepositCoin(5); //Add 5 to pot
+
+            //Assert
+            Assert.True (result);
         }
 
         [Fact]
         public void DepositWrongCoinTest()
         {
             //Arrange
-            MoneyPool mP = new MoneyPool(); //instance of the class
-            mP.DepositCoin(0);
+            MoneyPool moneyPool = new MoneyPool(); //instance of the class              
+            int coin = 6;
 
             //Act
-            mP.DepositCoin(55); //Add 55 to pot
+            bool result = moneyPool.DepositCoin(coin);
+
             //Assert
 
-            Assert.Throws<InvalidOperationException>(() => mP.DepositCoin(0));
+            Assert.False(result);
         }
 
         [Fact]

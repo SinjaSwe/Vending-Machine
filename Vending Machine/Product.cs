@@ -17,22 +17,26 @@ namespace Vending_Machine
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
         public int Price { get; set; }        
-        public string Action { get; set; }            
-       
+        public string Action { get; set; }
 
-        public void PurchaseComplete (int price, int moneyPoolPot)       
-        {               
+        public bool PurchaseComplete(int moneyPoolPot, int price)
+        {
+            bool purchaseComplete = false;
+
             if (moneyPoolPot >= price)
             {
-                --moneyPoolPot;
+                purchaseComplete = true;
             }
 
             else
-            { 
-                Console.WriteLine("Insufficient funds. Please feed some more coins into the machine"); 
+            {
+                Console.WriteLine("Insufficient funds");
             }
+
+            return purchaseComplete;
         }
 
+       
         public string ExamineProduct()
         {
             return $"Product Information: Product Type: {this.ProductType} \nProductName: {this.ProductName} \nPrice: {this.Price} \n\n" ;
