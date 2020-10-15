@@ -13,11 +13,11 @@ namespace Vending_Machine
         private string action; 
 
         //Properties
-        public string ProductType { get; set; }
-        public string ProductCode { get; set; }
-        public string ProductName { get; set; }
-        public int Price { get; set; }        
-        public string Action { get; set; }
+        public string ProductType { get { return productType; } }
+        public string ProductCode { get { return productCode; } }
+        public string ProductName { get { return productName; } }
+        public int Price { get { return price; } }        
+        public string Action { get { return action; } }
 
         public bool PurchaseComplete(int moneyPoolPot, int price)
         {

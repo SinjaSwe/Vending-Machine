@@ -7,10 +7,10 @@ namespace Vending_Machine
     {
         public Candy()
         {
-            this.ProductCode = "A1";
-            this.ProductName = "Mars";
-            this.Price = 12;
-            this.Action = " Time for a sugar hit? Enjoy your candy!";
+            string productCode = "A1";
+            string productName = "Mars";
+            int price = 12;
+            string action = " Time for a sugar hit? Enjoy your candy!";
         }          
         
     }

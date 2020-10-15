@@ -7,10 +7,10 @@ namespace Vending_Machine
     {
         public Chips()
         {
-            this.ProductCode = "B1";
-            this.ProductName = "Pringles";
-            this.Price = 23;
-            this.Action = "Once you pop, you can't stop!";
+            string productCode = "B1";
+            string productName = "Pringles";
+            int price = 23;
+            string action = "Once you pop, you can't stop!";
         }
 
     }

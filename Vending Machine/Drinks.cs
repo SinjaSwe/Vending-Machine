@@ -10,10 +10,10 @@ namespace Vending_Machine
     {
         public Drinks ()
         {
-            this.ProductCode = "C1";
-            this.ProductName = "Coke";
-            this.Price = 15;
-            this.Action = "Feeling thirsty? Enjoy this cold drink!";
+            string productCode = "C1";
+            string productName = "Coke";
+            int price = 15;
+            string action = "Feeling thirsty? Enjoy this cold drink!";
         }
 
     }
